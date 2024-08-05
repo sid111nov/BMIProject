@@ -7,6 +7,7 @@ from src.utils.exception import CustomException
 from src.utils.logger import logger
 from src.utils.utilities import save_object
 
+
 ## Data transformation reads the csv files train and test and 
 
 ## Clean and preprocess the data set applies imputation and transformation and save it into dataset
@@ -55,7 +56,7 @@ class DataTransformation:
         logger.info("Beginning Data Transformation")
         
         try:
-            print(self.test_file_path,self.train_file_path)
+            
             df_train,df_test = self.dataFrameExtract()
             col_transformer  = self.data_preprocessing()
             
@@ -76,7 +77,11 @@ class DataTransformation:
                 X_test, np.array(Y_test)
             ]
 
+            logger.info("Completed Data Transformation")
+
             file_loc = save_object(col_transformer,'column_transformer')
+
+            logger.info(f"Saving column transformation object at location {file_loc}")
 
             return(
                 train_array,
@@ -89,13 +94,3 @@ class DataTransformation:
         except Exception as e:
             CustomException(e.__str__,e.__traceback__)        
 
-if __name__ == "__main__":
-    cwd = os.getcwd()
-    artifact_path=os.path.join(cwd,"artifacts")
-    train_file_path = os.path.join(artifact_path,"train.csv")
-    test_file_path = os.path.join(artifact_path,"test.csv")
-    
-    data_Trasformation = DataTransformation(train_file_path,test_file_path)
-    
-    train_arr,test_arr, preprocessor = data_Trasformation.data_transformation()
-    

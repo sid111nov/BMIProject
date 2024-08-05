@@ -5,6 +5,8 @@ import os
 from sklearn.model_selection import train_test_split
 from src.utils.exception import CustomException
 from src.utils.logger import logger
+from .Model_Training import Model_Trainer
+from .Data_Transformation import DataTransformation
 '''
 Data Ingestion class takes input csv files, pre-process and clean the data, split data and save into train and test 
 '''
@@ -52,3 +54,12 @@ if __name__ == "__main__":
     dataIngestion = DataIngestion()
     train_file_path,test_file_path = dataIngestion.ingest_data()
     print(train_file_path,test_file_path)
+
+    
+    data_Trasformation = DataTransformation(train_file_path,test_file_path)
+    
+    train_arr,test_arr, preprocessor = data_Trasformation.data_transformation()
+
+    model = Model_Trainer(train_arr,test_arr, preprocessor)
+    model.train_models()
+    
