@@ -1,0 +1,57 @@
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column; /* add this line */
+}
+
+header {
+  margin-bottom: 10px;
+  color: magenta;
+  font-family: 'Roboto Slab';
+  font-weight: bold;
+}
+
+form {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto Slab';
+  font-weight: bold;
+}
+
+h2 {
+  font-family: 'Roboto Slab';
+  font-weight: bold;
+}
+
+  
+  input[type="number"], select {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Roboto Slab';
+    font-weight: bold;
+  }
+  
+  input[type="submit"] {
+    background-color: magenta; /* magenta submit button */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-family: 'Roboto Slab';
+    font-weight: bold;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #ff00ff; /* slightly darker magenta on hover */
+  }
+  
+  

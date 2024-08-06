@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header>
+        <h1>BMI Calculator</h1>
+    </header>
+    <main>
+       
+        <form action="{{ url_for('index')}}" method="post">
+            <label for="height">Height (cm):</label>
+            <input class="form-class" type="number" id="height" name="height" placeholder="Enter height" min=120 max=250 required>
+            
+            <label for="weight">Weight (kg):</label>
+            <input class="form-class" type="number" id="weight" name="weight" placeholder="Enter weight" min=35 max=800 required>
+            <br><br>
+            <label for="gender">Gender:</label>
+            <select class="form-class" id="gender" name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <br><br>
+            <input class="form-class" type="submit" value="Submit" required>
+          </form>
+          {% if results %}
+          <h2 id="result">BMI is {{ results }}</h2>
+         {% endif %}
+
+          
+          <script src="/static/script.js"></script>
+    </main>
+    
+</body>
+</html>
