@@ -1,5 +1,6 @@
 import sys
 import pandas as pd
+import numpy as np
 from src.utils.exception import CustomException
 from src.utils.logger import logger
 from src.utils.utilities import save_object
@@ -23,6 +24,7 @@ class PredictionPipeline:
             print(data)
             bmi = predictor_obj.predict(data)
             logger.info(f"Prediction came as {bmi}")
+            bmi = np.clip(np.round(bmi).astype(int),a_min=0,a_max=5)
             return bmi
         
         except Exception as e:
