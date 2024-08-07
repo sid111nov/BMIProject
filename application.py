@@ -4,7 +4,9 @@ from src.pipeline.prediction_pipeline import PredictionPipeline
 import numpy as np
 from src.utils.logger import logger
 
-app= Flask(__name__)
+application= Flask(__name__)
+
+app = application
 
 @app.route('/',methods=['GET','POST'])
 def index():
@@ -37,4 +39,4 @@ def getBMIMapping(bmi):
 
 if __name__=="__main__":
     
-    app.run(host="0.0.0.0",debug=True)
+    app.run(host="0.0.0.0")
