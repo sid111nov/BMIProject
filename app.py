@@ -23,7 +23,6 @@ def index():
         
         predict_pipeline=PredictionPipeline(data_df)
         bmi  = predict_pipeline.predict()
-        bmi = np.clip(np.round(bmi).astype(int),a_min=0,a_max=5)
         bmi_result = getBMIMapping(bmi)
         logger.info(f"Bmi for input features {data_df} is {bmi_result}")
         return render_template('index.html',results=bmi_result)
