@@ -4,3 +4,14 @@ __pycache__/
 *.pyc
 *.pyo
 .vscode/
+
+Here's an example .gitignore file that ignores dist files and egg.info files:
+
+# Distribution files
+dist/
+*.egg
+*.egg-info/
+
+# Other files to ignore
+build/
+*.log
