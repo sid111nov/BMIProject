@@ -15,6 +15,9 @@ Usage
 2. Click the "Calculate BMI" button.
 3. View your BMI category and score.
 
+Streamlit App: 
+https://bmiproject-m9gxmvtgodgghywv4fpxvv.streamlit.app/
+
 Features
 
 - Calculates BMI based on height and weight
@@ -31,12 +34,3 @@ Acknowledgments
 - Uses the Roboto Slab font from Google Fonts.
 - BMI Dataset from Kaggle M Yasser H
 
-This is just one example, but the key elements of a good README file include:
-
-- A clear description of the project
-- Installation and usage instructions
-- A list of features and functionalities
-- Guidelines for contributing
-- License and copyright information
-- Author and contributor information
-- Acknowledgments of third-party resources
