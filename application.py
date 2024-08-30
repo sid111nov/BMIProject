@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 from src.pipeline.CustomData import CustomData
 from src.pipeline.prediction_pipeline import PredictionPipeline
 import numpy as np
+import os
 from src.utils.logger import logger
 
 application= Flask(__name__)
@@ -27,7 +28,10 @@ def index():
         bmi  = predict_pipeline.predict()
         bmi_result = getBMIMapping(bmi)
         logger.info(f"Bmi for input features {data_df} is {bmi_result}")
-        return render_template('index.html',results=bmi_result)
+
+
+
+        return render_template('index.html', results=bmi_result)
 
 
 def getBMIMapping(bmi):
